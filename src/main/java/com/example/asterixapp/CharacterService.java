@@ -28,4 +28,9 @@ public class CharacterService {
         }
         return numberOfSmallCharacters;
     }
+
+    public Character save(String id, NewCharacter newCharacter) {
+        Character toSave = new Character(id, newCharacter.name(), newCharacter.description());
+        return repo.save(toSave);
+    }
 }
